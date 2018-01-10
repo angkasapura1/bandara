@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('administrator','AdminController@viewIndex')->middleware('administrator');
 
 /*TENAN*/
@@ -61,22 +59,25 @@ Route::post('administrator/akun','AkunController@postAkun')->middleware('adminis
 
 
 
-Route::get('/','HomePageController@viewBeranda');
-Route::get('tenan/{kategori}','HomePageController@viewTenan');
-Route::get('tenan/{kategori}/{id}','HomePageController@detailTenan');
-Route::get('profil','HomePageController@viewProfil');
-Route::get('jadwal','HomePageController@viewJadwal');
-Route::get('survey','HomePageController@viewSurvey');
-	Route::get('survey/{id}/{jenis}','HomePageController@klikSurvey');
-Route::get('promo-event','HomePageController@viewPromo');
-Route::get('promo-event/{id}','HomePageController@viewDetailPromo');
-Route::get('contact','HomePageController@viewContact');
+Route::get('/','HomeController@viewBeranda');
+Route::get('tenan/{kategori}','HomeController@viewTenan');
+Route::get('tenan/{kategori}/{id}','HomeController@detailTenan');
+Route::get('profil','HomeController@viewProfil');
+Route::get('jadwal','HomeController@viewJadwal');
+Route::get('survey','HomeController@viewSurvey');
+Route::get('survey/{id}/{jenis}','HomeController@klikSurvey');
+Route::get('promo-event','HomeController@viewPromo');
+Route::get('promo-event/{id}','HomeController@viewDetailPromo');
+Route::get('contact','HomeController@viewContact');
 
-Route::get('suka','HomePageController@suka');
-Route::get('tidak-suka','HomePageController@tidakSuka');
+Route::get('suka','HomeController@suka');
+Route::get('tidak-suka','HomeController@tidakSuka');
 
 Route::get('login','Auth\LoginController@viewLogin');
 Route::post('login','Auth\LoginController@postLogin');
 Route::get('logout','Auth\LoginController@logout');
 
-Route::get('jalankan','HomePageController@jalankan');
+Route::get('jalankan','HomeController@jalankan');
+
+
+Route::get('flight','HomeController@flight');

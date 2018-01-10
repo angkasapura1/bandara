@@ -16,8 +16,8 @@
                                 <div class="col s12">
                                     <div class="">
                                         <h5 class="blue-text">{{ucwords($profil->nama)}}</h5><hr>
-                                        <span style="font-size: 17px;">{{ucfirst($profil->teks)}}
-                                        </span>
+                                        <div style="text-align: justify; text-justify: inter-word;font-size: 17px;"><?=ucfirst($profil->teks)?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -28,4 +28,5 @@
         </div>
     </div>
 </div>
+
 @endsection

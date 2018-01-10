@@ -273,7 +273,20 @@
 
   <!-- tenan -->
   <script>window.jQuery || document.write('<script src="{{asset('home/js/libs/jquery-1.7.min.js')}}">\x3C/script>')</script>
+<script type="text/javascript">
+    var waktu = 30;
+    $('body').on('click dblclick mousedown mouseenter mouseleave mousemove keypress',
+        function(e){
+            waktu = 30;
+    });
 
+    setInterval(function(){
+        waktu = waktu - 1;
+        if(waktu === 0){
+            window.location.href="{{url('tenan/all')}}"
+        }
+    },1000);
+</script>
 
   </body>
 </html>

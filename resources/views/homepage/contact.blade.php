@@ -28,14 +28,14 @@
                             <h5>Social Media</h5><hr>
                             <div class="row">
                                 <div class="col s6">
-                                     <a href="{{$profil->fb}}" class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">favorite</i>Facebook</a>
+                                     <a href="javascript:;" class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">favorite</i>Https://www.facebook.com/SultanHasanuddinAirport</a>
                                  </div>
                                  <div class="col s6">
-                                     <a href="{{$profil->youtube}}" class="collapsible-header white-text" style="background-color: #FF5650FF; margin-top: 9px;"><i class="material-icons white-text">subscriptions</i>Youtube</a>
+                                     <a href="javascript:;" class="collapsible-header white-text" style="background-color: #FF5650FF; margin-top: 9px;"><i class="material-icons white-text">subscriptions</i>Youtube</a>
                                  </div>
                              </div>
                               <div class="col s3">
-                                     <a href="{{url('jalankan')}}" class="collapsible-header white-text" style="background-color: #FF5650FF; margin-top: 9px;"><i class="material-icons white-text">videocam</i><h4>Video Call</h4></a>
+                                     <a href="javascript:;" class="collapsible-header white-text" style="background-color: #FF5650FF; margin-top: 9px;"><i class="material-icons white-text">videocam</i><h4>Video Call</h4></a>
                                  </div>
 
                         </div>                  
@@ -46,4 +46,5 @@
     </div>
 
 </div>
+
 @endsection
