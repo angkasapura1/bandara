@@ -12,11 +12,11 @@
                             <table> 
                                 <thead>
                                     <tr class="green green lighten-4">
-                                        <th style="padding-left:20px;" width="20%"> Airline</th>
-                                        <th style="padding-left:20px;" width="10%">Flight</th>
-                                        <th width="25%">Destination</th>
-                                        <th width="10%">Time</th>
-                                        <th width="10%">Gate</th>
+                                        <th style="padding-left:20px;" width="22%"> Airline</th>
+                                        <th style="padding-left:15px;" width="16%">Flight</th>
+                                        <th width="23%">Destination</th>
+                                        <th width="11%">Time</th>
+                                        <th width="15%">Gate</th>
                                         <th width="25%">Remark</th>
                                     </tr>
                                 </thead>
@@ -25,7 +25,7 @@
                             <div class="hidden-scrollbar">
                                 <div class="inner-like">
                                     <table class="bordered">
-                                        <tbody>
+                                        <tbody id="isi">
                                           <tr>
                                             <td colspan="6" style="text-align:center">Loading..</td>
                                           </tr>
@@ -40,28 +40,31 @@
         </div>        
     </div>
     <script type="text/javascript">
-    $.ajax({ 
-       type: "GET",
-       url: "{{url('flight')}}",
-       success: function(data){  
-       var hasil = $.parseJSON(data); 
-       console.log(hasil.length);
-       $('tbody').html(' ');
-            for(var i=0;i<20;i++){
-                var gambar = null;
-                if(hasil[i].banner.banner !=null){gambar = '<img src="'+hasil[i].banner.banner+'" width="200px">';}else{gambar = hasil[i].airline;}
-                $('tbody').append('<tr>'+
-                                    '<td>'+gambar+'</td>'+
-                                    '<td>'+hasil[i].callsign2+'</td>'+
-                                    '<td>'+hasil[i].airport_name+'</td>'+
-                                    '<td>'+hasil[i].waktu+'</td>'+
-                                    '<td>'+hasil[i].gate+'</td>'+
-                                    '<td>'+hasil[i].status_label+'</td>'+
-                                  '</tr>'
-                    );
-            }
-       }
-    });
+
+    setInterval(function(){
+        $.ajax({ 
+           type: "GET",
+           url: "{{url('flight')}}",
+           success: function(datas){  
+           var hasil = $.parseJSON(datas); 
+           $('#isi').html(' ');
+                for(var i=0;i<20;i++){
+                    var gambar = null;
+                    if(hasil[i].banner.banner !=null){gambar = '<img src="'+hasil[i].banner.banner+'" width="200px"/>';}else{gambar = hasil[i].airline;}
+                    $('#isi').append('<tr>'+
+                                        '<td style="width:400px;">'+gambar+'</td>'+
+                                        '<td>'+hasil[i].callsign2+'</td>'+
+                                        '<td>'+hasil[i].airport_name+'</td>'+
+                                        '<td>'+hasil[i].waktu+'</td>'+
+                                        '<td>'+hasil[i].gate+'</td>'+
+                                        '<td class="center">'+hasil[i].statuspenerbangan+'</td>'+
+                                      '</tr>'
+                        );
+                }
+           }
+        });
+    },5000);
+    
     </script>
     
 @endsection

@@ -84,15 +84,15 @@
       <img src="{{asset('home/assets/images/header2.png')}}" class="responsive-img">
     </div>
   
-
-          <div class="row" style="padding-bottom: 0px;">      
+            <div class="row" style="padding-bottom: 0px;">      
               <div class="col s9" style="padding: 0px;">
                   <div class="row" style="padding-bottom: 0px;">                  
                       <div class="col s12" style="padding-bottom: 0px;">
                         <div class="collapsible-header white-text" style="background-color: #16A2E7FF; margin-top: 9px;"><i class="material-icons white-text">map</i>MAPS</div>
-                               <!-- slider -->
-                            <div style="width: 1405px; height: 600px;" >
-                                    <img src="{{asset('images/gambar/maps.png')}}" alt="" class="img-responsive" style="width: 1260px; padding-top: 70px;">
+                            <div style=" height: 700px; background-color: #EBEBEBFF"; margin-left: "30px"; >
+                                <video autoplay loop muted width="100%" height="700px;">
+                                    <source src="{{asset('images/gambar/map3d.mp4')}}" type="video/mp4">
+                                </video>                                
                             </div>
                       </div>
                   </div>

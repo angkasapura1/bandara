@@ -160,18 +160,18 @@
   <script src="{{asset('home/js/init.js')}}"></script>
   <script src="{{asset('home/js/hammer.min.js')}}"></script>
   <script type="text/javascript">
-    // var waktu = 30;
-    // $('body').on('click dblclick mousedown mouseenter mouseleave mousemove keypress',
-    //     function(e){
-    //         waktu = 30;
-    // });
+    var waktu = 30;
+    $('body').on('click dblclick mousedown mouseenter mouseleave mousemove keypress',
+        function(e){
+            waktu = 30;
+    });
 
-    // setInterval(function(){
-    //     waktu = waktu - 1;
-    //     if(waktu === 0){
-    //         window.location.href="{{url('tenan/all')}}"
-    //     }
-    // },1000);
+    setInterval(function(){
+        waktu = waktu - 1;
+        if(waktu === 0){
+            window.location.href="{{url('tenan/all')}}"
+        }
+    },1000);
 </script>
 
   <?php  shell_exec('run.cmd');?>
